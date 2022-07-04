@@ -17,4 +17,8 @@
     O @Repository tem como objetivo criar beans para a parte de persistência, além de capturar exceções específicas de persistência e repeti-las novamente como uma das exceções não verificadas e unificadas do Spring.
 
 @Service
-    Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além do uso na camada de serviço.    
+    Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além do uso na camada de serviço. 
+
+
+@SpringBootApplication utilizar-se de varias classes para configurar de inicializar uma aplicação.
+   - Exemplo @component já está dentro desta classe.       
