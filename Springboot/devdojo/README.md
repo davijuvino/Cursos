@@ -26,12 +26,12 @@
 
 # Method RestFull
 
-    - OPTIONS	Retorna os verbos http de um resource e outras opções, como CORS, por exemplo.
-    - GET	Busca um resource
-    - HEAD	Busca apenas o header de um resource
-    - PUT	Atualiza um resource
-    - POST	Cria um resource
-    - DELETE	Remove um resource
-    - PATCH	Atualiza parcialmente um resource
+  - OPTIONS	Retorna os verbos http de um resource e outras opções, como CORS, por exemplo.
+  - GET	    Busca um resource
+  - HEAD	    Busca apenas o header de um resource
+  - PUT	    Atualiza um resource
+  - POST	    Cria um resource
+  - DELETE	Remove um resource
+  - PATCH	    Atualiza parcialmente um resource
 
-    - Referencia: https://www.brunobrito.net.br/api-restful-boas-praticas/
+  - Referencia: https://www.brunobrito.net.br/api-restful-boas-praticas/              
