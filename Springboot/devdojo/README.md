@@ -10,28 +10,26 @@
   - @Autowired indica um ponto aonde a injeção automática deve ser aplicada. Esta pode ser usada em métodos, atributos e construtores
 
 
-@Componente
-    Podemos usar o @Component no aplicativo para marcar os beans como componentes gerenciados do Spring. O Spring apenas registra beans com @Component sem procurar por @Service e @Repository os quais são registrados no ApplicationContext porque são anotados com @Component
+  - @Componente Podemos usar o @Component no aplicativo para marcar os beans como componentes gerenciados do Spring. O Spring apenas registra beans com @Component sem procurar por @Service e @Repository os quais são registrados no ApplicationContext porque são anotados com @Component
 
-@Repositório
-    O @Repository tem como objetivo criar beans para a parte de persistência, além de capturar exceções específicas de persistência e repeti-las novamente como uma das exceções não verificadas e unificadas do Spring.
+  - @Repositório O @Repository tem como objetivo criar beans para a parte de persistência, além de capturar exceções específicas de persistência e repeti-las novamente como uma das exceções não verificadas e unificadas do Spring.
 
-@Service
-    Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além do uso na camada de serviço. 
+  - @Service Marcamos beans com @Service para indicar que ele está mantendo a lógica de negócios. Não há outra especialidade, além do uso na camada de serviço. 
 
 
-@SpringBootApplication utilizar-se de varias classes para configurar de inicializar uma aplicação.
+  - @SpringBootApplication utilizar-se de varias classes para configurar de inicializar uma aplicação.
    - Exemplo @component já está dentro desta classe.       
 
 
 # Method RestFull
 
-  - OPTIONS	Retorna os verbos http de um resource e outras opções, como CORS, por exemplo.
-  - GET	    Busca um resource
+  - OPTIONS 	Retorna os verbos http de um resource e outras opções, como CORS, por exemplo.
+  - GET	      Busca um resource
   - HEAD	    Busca apenas o header de um resource
-  - PUT	    Atualiza um resource
+  - PUT	      Atualiza um resource
   - POST	    Cria um resource
-  - DELETE	Remove um resource
+  - DELETE	  Remove um resource
   - PATCH	    Atualiza parcialmente um resource
 
-  - Referencia: https://www.brunobrito.net.br/api-restful-boas-praticas/              
+  - Referencia: https://www.brunobrito.net.br/api-restful-boas-praticas/    
+  - Referencia de implementação e pontos como Idempotent seção 8.1.2: https://datatracker.ietf.org/doc/html/rfc7231          
