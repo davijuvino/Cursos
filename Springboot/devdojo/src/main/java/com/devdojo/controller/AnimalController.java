@@ -3,6 +3,7 @@ package com.devdojo.controller;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devdojo.model.dto.AnimeDTO;
@@ -28,7 +30,9 @@ import lombok.extern.log4j.Log4j2;
 @RequiredArgsConstructor
 public class AnimalController {
 	
+	
 	private final DateUtil dateUtil;
+	
 	
 	private final AnimeService animeService;
 	
@@ -40,6 +44,10 @@ public class AnimalController {
 		return ResponseEntity.ok(animeService.listAll()) ;
 	}
 
+	@GetMapping(path = "/findName")
+	public ResponseEntity<List<Anime>> findByName(@RequestParam String name) {
+	    return ResponseEntity.ok(animeService.findByName(name)) ;
+	}
 	
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Anime> findById(@PathVariable long id) {
@@ -64,11 +72,5 @@ public class AnimalController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
-	
-	
-	
-	
-	
-
 
 }

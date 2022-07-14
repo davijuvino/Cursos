@@ -39,4 +39,16 @@
   - Referencia: https://pt.linkedin.com/pulse/mapstruct-como-simplificar-mapeamento-de-dtos-em-java-de-souza-bueno
 
 # ModelMapper
-  - Referencia: https://www.alura.com.br/artigos/mapeando-objeto-para-objeto-com-modelmapper          
+  - Referencia: https://www.alura.com.br/artigos/mapeando-objeto-para-objeto-com-modelmapper      
+
+
+# RequestParam
+  - Referencia: https://www.baeldung.com/spring-request-param  
+
+
+# Exceções
+  - https://reflectoring.io/spring-boot-exception-handling/  
+
+
+# @Transactional
+  - https://thorben-janssen.com/transactions-spring-data-jpa/
