@@ -32,4 +32,11 @@
   - PATCH	    Atualiza parcialmente um resource
 
   - Referencia: https://www.brunobrito.net.br/api-restful-boas-praticas/    
-  - Referencia de implementação e pontos como Idempotent seção 8.1.2: https://datatracker.ietf.org/doc/html/rfc7231          
+  - Referencia de implementação e pontos como Idempotent seção 8.1.2: https://datatracker.ietf.org/doc/html/rfc7231  
+
+# MapStruct
+  - Como simplificar mapeamento de DTOs em Java
+  - Referencia: https://pt.linkedin.com/pulse/mapstruct-como-simplificar-mapeamento-de-dtos-em-java-de-souza-bueno
+
+# ModelMapper
+  - Referencia: https://www.alura.com.br/artigos/mapeando-objeto-para-objeto-com-modelmapper          

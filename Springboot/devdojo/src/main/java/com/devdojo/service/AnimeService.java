@@ -2,7 +2,7 @@ package com.devdojo.service;
 
 import java.util.List;
 
-
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -20,6 +20,8 @@ public class AnimeService {
 	
 	private final AnimeRepository animeRepository;
 	
+	private final ModelMapper modelMapper;
+	
 	public List<Anime> listAll() {
 		return animeRepository.findAll();
 	}
@@ -30,7 +32,7 @@ public class AnimeService {
 	}
 
 	public Anime save(AnimeDTO animeDTO) {
-		return animeRepository.save(Anime.builder().name(animeDTO.getName()).build());
+		return animeRepository.save(modelMapper.map(animeDTO, Anime.class));
 	}
 
 	public void delete(long id) {
@@ -40,15 +42,15 @@ public class AnimeService {
 
 	public void update(Anime anime) {
 		
-		Anime animeUpdate = animeRepository.findById(anime.getId())
-		.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "AnimeRepository not found"));
+		Anime savedAnime = findById(anime.getId());
 		
-		Anime newobjet = Anime.builder()
-				.id(animeUpdate.getId())
-				.name(anime.getName())
-				.build();
+		AnimeDTO newObjetDto = modelMapper.map(anime, AnimeDTO.class);
+		Anime newObjet = modelMapper.map(newObjetDto, Anime.class);
+		newObjet.setId(savedAnime.getId());
 		
-		animeRepository.save(newobjet);
+		
+		animeRepository.save(newObjet);
 		
 	}
+
 }
