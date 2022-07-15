@@ -3,6 +3,7 @@ package com.devdojo.controller;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,7 +56,7 @@ public class AnimalController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Anime> save(@RequestBody AnimeDTO animeDTO){
+	public ResponseEntity<Anime> save(@RequestBody @Valid AnimeDTO animeDTO){
 		return new ResponseEntity<>(animeService.save(animeDTO), HttpStatus.CREATED);
 	}
 	

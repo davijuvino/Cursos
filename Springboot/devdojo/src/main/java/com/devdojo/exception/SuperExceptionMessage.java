@@ -2,17 +2,17 @@ package com.devdojo.exception;
 
 import java.time.LocalDateTime;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 
 @Data
-@Builder
-public class ExceptionMessageDetails {
+@SuperBuilder
+public class SuperExceptionMessage {
 
-	private String title;
-	private int status;
-	private String message;
-	private String details;
-	private LocalDateTime timestamp;
+	protected String title;
+	protected int status;
+	protected String message;
+	protected String details;
+	protected LocalDateTime timestamp;
 } 

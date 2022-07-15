@@ -47,8 +47,17 @@
 
 
 # Exceções
-  - https://reflectoring.io/spring-boot-exception-handling/  
+  - Referencia: https://reflectoring.io/spring-boot-exception-handling/  
 
 
 # @Transactional
-  - https://thorben-janssen.com/transactions-spring-data-jpa/
+  - Referencia: https://thorben-janssen.com/transactions-spring-data-jpa/
+
+
+# Validação
+  - Referencia: https://www.zup.com.br/blog/spring-validation-o-que-e
+
+# Handler para validação de campos
+  - Referencia: http://davifelipe.com.br/spring-boot-validation
+  - Referencia: https://www.youtube.com/watch?v=tRb_OscShmc&list=PL62G310vn6nFBIxp6ZwGnm8xMcGE3VA5H&index=22
+  - Referencia de retornos: https://www.javatips.net/api/org.springframework.validation.fielderror  

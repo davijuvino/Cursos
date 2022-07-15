@@ -1,14 +1,11 @@
 package com.devdojo.exception;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class BadRequestException extends RuntimeException {
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
-	private static final long serialVersionUID = 1L;
+@Getter
+@SuperBuilder
+public class BadRequestExceptionDetails extends SuperExceptionMessage   {
 
-	public BadRequestException(String message) {
-		super(message);
-	}
 
 }
