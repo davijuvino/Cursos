@@ -61,3 +61,18 @@
   - Referencia: http://davifelipe.com.br/spring-boot-validation
   - Referencia: https://www.youtube.com/watch?v=tRb_OscShmc&list=PL62G310vn6nFBIxp6ZwGnm8xMcGE3VA5H&index=22
   - Referencia de retornos: https://www.javatips.net/api/org.springframework.validation.fielderror  
+
+
+# Paginação
+  - Referencia: https://www.baeldung.com/rest-api-pagination-in-spring  
+
+
+# WebMvcConfigurer
+  - Configuração global para sobrescrever a quantidade de paginas de retorno e determinar o tamanho
+
+# Sorting, Log SQL
+  - Determinando ordem nas paginações desc asc e por pelo campo    
+
+# RestTemplate
+ - Referencia: https://www.baeldung.com/rest-template  
+ - Referencia: https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/

@@ -5,6 +5,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.devdojo.exception.BadRequestException;
@@ -24,8 +26,8 @@ public class AnimeService {
 	private final ModelMapper modelMapper;
 	
 	
-	public List<Anime> listAll() {
-		return animeRepository.findAll();
+	public Page<Anime> listAll(Pageable pageable) {
+		return animeRepository.findAll(pageable);
 	}
 	
 	
