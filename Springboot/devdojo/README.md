@@ -76,3 +76,9 @@
 # RestTemplate
  - Referencia: https://www.baeldung.com/rest-template  
  - Referencia: https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/
+ - https://www.section.io/engineering-education/spring-boot-rest-template/
+ - https://jsonplaceholder.typicode.com/
+
+# Sonarqube
+ - https://www.youtube.com/watch?v=TNEHX51L9Do
+ - https://www.sonarqube.org/
