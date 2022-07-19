@@ -82,3 +82,13 @@
 # Sonarqube
  - https://www.youtube.com/watch?v=TNEHX51L9Do
  - https://www.sonarqube.org/
+ - https://www.baeldung.com/sonarqube-jacoco-code-coverage
+ - https://www.youtube.com/watch?v=zM2DOalHxHY
+ - https://www.linkedin.com/pulse/sonarqube-jacoco-configuration-springboot-maven-santosh-kumar-kar
+ - https://github.com/SonarSource/sonar-scanning-examples/tree/master/sonarqube-scanner-maven/maven-basic
+
+
+# Tests
+ - https://www.vogella.com/tutorials/JUnit/article.html
+ - https://junit.org/junit5/docs/snapshot/user-guide/ 
+ https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
