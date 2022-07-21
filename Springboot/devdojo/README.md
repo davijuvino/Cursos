@@ -92,3 +92,19 @@
  - https://www.vogella.com/tutorials/JUnit/article.html
  - https://junit.org/junit5/docs/snapshot/user-guide/ 
  https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+
+
+# Tests:
+  - @DataJpaTest
+
+
+# SpringSecurity
+  - exemplos:
+    - Spring REST + Spring Security Example - Mkyong.com - https://mkyong.com/spring-boot/spring-rest-spring-security-example/
+    - Integration Testing of Spring MVC Applications: Security - https://www.petrikainulainen.net/programming/spring-framework/integration-testing-of-spring-mvc-applications-security/
+    - Spring Security Add Roles to User Examples - https://www.codejava.net/frameworks/spring-boot/spring-security-add-roles-to-user-examples
+    - Spring Security JUnit Testing - https://blog.shailendra.dev/spring-security-junit-testing
+    - https://github.com/ishailendra/tutorials/tree/master/spring-security-modules
+    - Securing a Rest API with Spring Security - OctoPerf - https://octoperf.com/blog/2018/03/08/securing-rest-api-spring-security/#application-bootstrap
+    - https://www.programcreek.com/java-api-examples/?api=org.springframework.security.test.context.support.WithMockUser
+    
