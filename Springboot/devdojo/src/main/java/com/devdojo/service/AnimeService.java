@@ -26,8 +26,13 @@ public class AnimeService {
 	private final ModelMapper modelMapper;
 	
 	
-	public Page<Anime> listAll(Pageable pageable) {
+	public Page<Anime> findAllPage(Pageable pageable) {
 		return animeRepository.findAll(pageable);
+	}
+	
+	
+	public List<Anime> findAll() {
+		return animeRepository.findAll();
 	}
 	
 	
@@ -43,7 +48,8 @@ public class AnimeService {
 
 	@Transactional
 	public Anime save(AnimeDTO animeDTO) {
-		return animeRepository.save(modelMapper.map(animeDTO, Anime.class));
+		Anime entity = modelMapper.map(animeDTO, Anime.class);
+		return animeRepository.save(entity);
 	}
 
 	
@@ -64,6 +70,12 @@ public class AnimeService {
 		
 		animeRepository.save(newObjet);
 		
+	}
+
+
+	public Anime save(Anime build) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

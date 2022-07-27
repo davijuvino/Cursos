@@ -22,19 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devdojo.model.dto.AnimeDTO;
 import com.devdojo.model.entity.Anime;
 import com.devdojo.service.AnimeService;
-import com.devdojo.util.DateUtil;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
 @RestController
 @RequestMapping("animes")
-@Log4j2
 @RequiredArgsConstructor
-public class AnimalController {
-	
-	
-	private final DateUtil dateUtil;
+public class AnimeController {
 	
 	
 	private final AnimeService animeService;
@@ -42,11 +36,16 @@ public class AnimalController {
 	
 	
 	@GetMapping
-	public ResponseEntity<Page<Anime>> list(Pageable pageable) {
-	    log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
-		return ResponseEntity.ok(animeService.listAll(pageable)) ;
+	public ResponseEntity<Page<Anime>> findAllPage(Pageable pageable) {
+		return ResponseEntity.ok(animeService.findAllPage(pageable)) ;
 	}
 
+	@GetMapping
+	public ResponseEntity<List<Anime>> findAll() {
+		return ResponseEntity.ok(animeService.findAll()) ;
+	}
+	
+	
 	@GetMapping(path = "/findName")
 	public ResponseEntity<List<Anime>> findByName(@RequestParam String name) {
 	    return ResponseEntity.ok(animeService.findByName(name)) ;

@@ -91,11 +91,17 @@
 # Tests
  - https://www.vogella.com/tutorials/JUnit/article.html
  - https://junit.org/junit5/docs/snapshot/user-guide/ 
- https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
-
+ - https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+ - https://thepracticaldeveloper.com/guide-spring-boot-controller-tests/
+ - https://github.com/ehizman/bedspaces/tree/main/src/test/java
+ - https://reflectoring.io/clean-unit-tests-with-mockito/
+ - https://dimitr.im/unit-testing-spring-boot
+ - https://programmingtechie.com/2020/10/16/spring-boot-testing-tutorial-unit-testing-with-junit-5-and-mockito/
 
 # Tests:
   - @DataJpaTest
+  - @Mockito  - https://www.youtube.com/watch?v=fiinSp8CxZs
+
 
 
 # SpringSecurity
