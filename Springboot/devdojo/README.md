@@ -97,6 +97,9 @@
  - https://reflectoring.io/clean-unit-tests-with-mockito/
  - https://dimitr.im/unit-testing-spring-boot
  - https://programmingtechie.com/2020/10/16/spring-boot-testing-tutorial-unit-testing-with-junit-5-and-mockito/
+ 
+ - SPRING: https://www.tabnine.com/code/java/classes/org.springframework.security.provisioning.InMemoryUserDetailsManager
+ - Exemplos: https://www.tabnine.com/code/java
 
 # Tests:
   - @DataJpaTest
@@ -113,4 +116,11 @@
     - https://github.com/ishailendra/tutorials/tree/master/spring-security-modules
     - Securing a Rest API with Spring Security - OctoPerf - https://octoperf.com/blog/2018/03/08/securing-rest-api-spring-security/#application-bootstrap
     - https://www.programcreek.com/java-api-examples/?api=org.springframework.security.test.context.support.WithMockUser
+ - Tests:
+    - https://www.tabnine.com/web/assistant/code/rs/5c788f4a49efcb00016f1c5d#L151 
     
+# Spring Security - Autenticação em memória
+  - WebSecurityConfigurerAdapter deprecated
+  - Referencia: https://cursos.alura.com.br/forum/topico-websecurityconfigureradapter-deprecated-222772
+  - Agora podemos adotar configuração baseada em componentes
+  - https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter

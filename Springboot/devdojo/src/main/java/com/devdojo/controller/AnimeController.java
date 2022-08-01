@@ -35,7 +35,7 @@ public class AnimeController {
 	
 	
 	
-	@GetMapping
+	@GetMapping(path = "/findPage")
 	public ResponseEntity<Page<Anime>> findAllPage(Pageable pageable) {
 		return ResponseEntity.ok(animeService.findAllPage(pageable)) ;
 	}
