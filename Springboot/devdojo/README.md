@@ -129,3 +129,13 @@
   # CSRF Token
    - https://portswigger.net/web-security/csrf/tokens
    - AUTOMATIZANDO O TOKEN NO POSTMAN
+
+  # @PreAuthori
+   - https://www.baeldung.com/spring-security-method-security
+
+
+
+# Erros:
+  - (OBJETO DTO SEM O CAMPO ID) cannot deserialize from Object value (no delegate- or property-based Creator in Java  
+# Soluções:
+  - https://exerror.com/no-creators-like-default-construct-exist-cannot-deserialize-from-object-value-no-delegate-or-property-based-creator/           

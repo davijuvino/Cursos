@@ -2,6 +2,7 @@ package com.devdojo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,7 +11,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 //import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
-
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 public class SecurityConfig {
 
@@ -34,7 +35,7 @@ public class SecurityConfig {
           User.withUsername("admin")
               .passwordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder()::encode)
               .password("admin")
-              .roles("USER","ADMIN")
+              .roles("ADMIN")
               .build());
       manager.createUser(
           User.withUsername("user")

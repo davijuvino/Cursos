@@ -48,8 +48,7 @@ public class AnimeService {
 
 	@Transactional
 	public Anime save(AnimeDTO animeDTO) {
-		Anime entity = modelMapper.map(animeDTO, Anime.class);
-		return animeRepository.save(entity);
+		return animeRepository.save(modelMapper.map(animeDTO, Anime.class));
 	}
 
 	
@@ -70,12 +69,6 @@ public class AnimeService {
 		
 		animeRepository.save(newObjet);
 		
-	}
-
-
-	public Anime save(Anime build) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
