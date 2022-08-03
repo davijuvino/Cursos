@@ -120,7 +120,12 @@
     - https://www.tabnine.com/web/assistant/code/rs/5c788f4a49efcb00016f1c5d#L151 
     
 # Spring Security - Autenticação em memória
-  - WebSecurityConfigurerAdapter deprecated
-  - Referencia: https://cursos.alura.com.br/forum/topico-websecurityconfigureradapter-deprecated-222772
-  - Agora podemos adotar configuração baseada em componentes
-  - https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+  
+  # WebSecurityConfigurerAdapter deprecated
+   - Referencia: https://cursos.alura.com.br/forum/topico-websecurityconfigureradapter-deprecated-222772
+   - Agora podemos adotar configuração baseada em componentes
+   - https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter
+
+  # CSRF Token
+   - https://portswigger.net/web-security/csrf/tokens
+   - AUTOMATIZANDO O TOKEN NO POSTMAN
