@@ -1,6 +1,9 @@
 # SringBoot - devDojo
 
+# Tutorias:
+  - https://github.com/joshlong/spring-boot
 
+  
 # injeção de dependência
   - Injeção de dependências (Dependency Injection - DI) é um tipo de inversão de controle (Inversion of Control - IoC) que dá nome ao processo de prover instâncias de classes que um objeto precisa para funcionar 
   
@@ -133,9 +136,38 @@
   # @PreAuthori
    - https://www.baeldung.com/spring-security-method-security
 
+  # @AuthenticationPrincipal
+   - Recuperar o usuario autenticado na aplicação e logar com a pagina padrão do sprinboot
+
+  # Autenticação com usuário no banco de dados
+   - UseDetails
+   - Exemplos de inclusão de registro: https://www.baeldung.com/role-and-privilege-for-spring-security-registration
+   - Exemplos de collection authorities https://www.javatips.net/api/org.springframework.security.core.authority.simplegrantedauthority
+   - Exemplos https://www.javadevjournal.com/spring-security/spring-security-roles-and-permissions/
+   - https://www.toptal.com/spring/spring-security-tut orial
+   - Exemplo Role: https://javatechonline.com/how-to-implement-security-in-spring-boot-using-userdetailsservice/
+   - Exemplos: https://morioh.com/p/588debc132f2
+   - Exemplos: https://javatechonline.com/
+   - Exemplos git: https://github.com/orgs/Java-Techie-jt/repositories
+   - Exemplo Simples: https://progressivecoder.com/implementing-spring-boot-security-using-userdetailsservice/
+   - Exemplos: https://www.javatips.net/
+   - Exemplo: migração https://www.appsdeveloperblog.com/migrating-from-deprecated-websecurityconfigureradapter/
 
 
-# Erros:
+
+
+
+
+
+
+# Erros1:
   - (OBJETO DTO SEM O CAMPO ID) cannot deserialize from Object value (no delegate- or property-based Creator in Java  
 # Soluções:
-  - https://exerror.com/no-creators-like-default-construct-exist-cannot-deserialize-from-object-value-no-delegate-or-property-based-creator/           
+  - https://exerror.com/no-creators-like-default-construct-exist-cannot-deserialize-from-object-value-no-delegate-or-property-based-creator/ 
+
+
+# Erros2:
+  - Action:
+  - Relying upon circular references is discouraged and they are prohibited by default.  
+# Solução:
+  - spring.main.allow-circular-references=true
