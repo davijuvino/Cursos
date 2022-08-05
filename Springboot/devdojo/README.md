@@ -171,3 +171,5 @@
   - Relying upon circular references is discouraged and they are prohibited by default.  
 # Solução:
   - spring.main.allow-circular-references=true
+  
+# LABORATORIO/LAB01  
