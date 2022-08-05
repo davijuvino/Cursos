@@ -26,3 +26,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 }
+
+
+//https://gaemi606.tistory.com/entry/Spring-Boot-Spring-Security-%ED%95%9C-%EC%9C%A0%EC%A0%80%EC%97%90%EA%B2%8C-%EC%97%AC%EB%9F%AC-AuthorityROLE-%EB%B6%80%EC%97%AC%ED%95%98%EA%B8%B0-UserDetails
