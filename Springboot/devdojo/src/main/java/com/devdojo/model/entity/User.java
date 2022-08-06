@@ -37,13 +37,14 @@ public class User implements UserDetails{
 	private String name;
 	private String email;
 	private String password;
-	private String authorities;
+	private ArrayList<String> authorities;
+
 	
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Arrays.stream(authorities.split(","))
-				.map(SimpleGrantedAuthority::new)
-				.collect(Collectors.toList());
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.authorities.stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
 	}
 	@Override
 	public String getUsername() {

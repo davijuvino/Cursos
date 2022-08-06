@@ -1,8 +1,10 @@
 package com.devdojo.model.entity;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
@@ -37,14 +39,16 @@ public class User implements UserDetails{
 	private String name;
 	private String email;
 	private String password;
-	private String authorities;
+	private ArrayList<String> authorities;
+
 	
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Arrays.stream(authorities.split(","))
-				.map(SimpleGrantedAuthority::new)
-				.collect(Collectors.toList());
-	}
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.authorities.stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+        
+    }
 	@Override
 	public String getUsername() {
 		return this.email;

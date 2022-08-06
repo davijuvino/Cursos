@@ -152,8 +152,11 @@
    - Exemplo Simples: https://progressivecoder.com/implementing-spring-boot-security-using-userdetailsservice/
    - Exemplos: https://www.javatips.net/
    - Exemplo: migração https://www.appsdeveloperblog.com/migrating-from-deprecated-websecurityconfigureradapter/
+   - Exemplo completo: https://github.com/Baeldung/spring-security-registration/blob/master/src/main/java/com/baeldung/web/controller/OldRegistrationController.java
 
-
+  # JWT
+   - https://examples.javacodegeeks.com/spring-boot-security-and-jwt-hello-world-example/ 
+   - https://www.evertop.pl/en/how-to-secure-the-application-with-spring-security-using-the-jwt-and-mysql-database/
 
 
 
@@ -171,3 +174,6 @@
   - Relying upon circular references is discouraged and they are prohibited by default.  
 # Solução:
   - spring.main.allow-circular-references=true
+
+
+
