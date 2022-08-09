@@ -144,7 +144,7 @@
    - Exemplos de inclusão de registro: https://www.baeldung.com/role-and-privilege-for-spring-security-registration
    - Exemplos de collection authorities https://www.javatips.net/api/org.springframework.security.core.authority.simplegrantedauthority
    - Exemplos https://www.javadevjournal.com/spring-security/spring-security-roles-and-permissions/
-   - https://www.toptal.com/spring/spring-security-tut orial
+   - Exemplo https://www.toptal.com/spring/spring-security-tutorial
    - Exemplo Role: https://javatechonline.com/how-to-implement-security-in-spring-boot-using-userdetailsservice/
    - Exemplos: https://morioh.com/p/588debc132f2
    - Exemplos: https://javatechonline.com/
