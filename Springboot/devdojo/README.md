@@ -111,6 +111,7 @@
 
 
 # SpringSecurity
+  - Tutorial: https://everyone-can-code.github.io/blog/2019/09/spring-security/
   - exemplos:
     - Spring REST + Spring Security Example - Mkyong.com - https://mkyong.com/spring-boot/spring-rest-spring-security-example/
     - Integration Testing of Spring MVC Applications: Security - https://www.petrikainulainen.net/programming/spring-framework/integration-testing-of-spring-mvc-applications-security/
@@ -171,3 +172,5 @@
   - Relying upon circular references is discouraged and they are prohibited by default.  
 # Solução:
   - spring.main.allow-circular-references=true
+  
+# LABORATORIO/LAB01  
