@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.devdojo.service.UserServiceImpl;
 
@@ -21,7 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig {
 
 	
-	
+	private final JwtTokenProvider jwtTokenProvider;
 	private final PasswordEncoder bCrypt;
 	private final UserServiceImpl service;
 	
@@ -31,9 +33,14 @@ public class SecurityConfig {
         http.csrf().disable()
         // Criando um token com http false, para não perder a sessão do tokem no front
         //csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
+        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        .and()
         .authorizeHttpRequests((authz) -> authz
-            .anyRequest()
-            .authenticated())
+        	.anyRequest()
+            .permitAll()
+            .and()
+            .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+                    UsernamePasswordAuthenticationFilter.class))
             .httpBasic();
         return http.build();
     }

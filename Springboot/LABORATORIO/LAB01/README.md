@@ -153,10 +153,13 @@
    - Exemplos: https://www.javatips.net/
    - Exemplo: migração https://www.appsdeveloperblog.com/migrating-from-deprecated-websecurityconfigureradapter/
    - Exemplo completo: https://github.com/Baeldung/spring-security-registration/blob/master/src/main/java/com/baeldung/web/controller/OldRegistrationController.java
+   - https://github.com/codej99/SpringRestApi/tree/feature/security
 
   # JWT
    - https://examples.javacodegeeks.com/spring-boot-security-and-jwt-hello-world-example/ 
    - https://www.evertop.pl/en/how-to-secure-the-application-with-spring-security-using-the-jwt-and-mysql-database/
+   - https://github.com/Odilio/spring-security-roles/blob/master/src/main/java/com/springsecurity/roles/controller/UserController.java
+   - https://github.com/codej99/SpringRestApi/tree/feature/security
 
 
 
