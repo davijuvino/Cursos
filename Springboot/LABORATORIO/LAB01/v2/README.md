@@ -1,5 +1,12 @@
 # SringBoot - devDojo
 
+
+ # Exemplos de application completa:
+   - https://svn.apache.org/repos/asf/rave/attic/tags/0.21/rave-components/rave-core/src/main/java/org/apache/rave/portal/
+
+
+
+
 # Tutorias:
   - https://github.com/joshlong/spring-boot
 
@@ -154,12 +161,14 @@
    - Exemplo: migração https://www.appsdeveloperblog.com/migrating-from-deprecated-websecurityconfigureradapter/
    - Exemplo completo: https://github.com/Baeldung/spring-security-registration/blob/master/src/main/java/com/baeldung/web/controller/OldRegistrationController.java
    - https://github.com/codej99/SpringRestApi/tree/feature/security
+   - https://books.google.com.br/books?id=gklxDwAAQBAJ&pg=PA61&lpg=PA61&dq=GrantedAuthority+junit&source=bl&ots=Brt5Oz5bOW&sig=ACfU3U1lBL1-30zIbCAwS3vP7XysaFMGuQ&hl=pt-BR&sa=X&ved=2ahUKEwiFv9S56sH5AhXxspUCHelgCHkQ6AF6BAgZEAM#v=onepage&q=GrantedAuthority%20junit&f=false
 
   # JWT
    - https://examples.javacodegeeks.com/spring-boot-security-and-jwt-hello-world-example/ 
    - https://www.evertop.pl/en/how-to-secure-the-application-with-spring-security-using-the-jwt-and-mysql-database/
    - https://github.com/Odilio/spring-security-roles/blob/master/src/main/java/com/springsecurity/roles/controller/UserController.java
    - https://github.com/codej99/SpringRestApi/tree/feature/security
+
 
 
 
