@@ -1,0 +1,145 @@
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.header-dark{
+    background-color: var(--dark-green);
+}
+
+.header-light{
+    background-color: var(--light-green);
+}
+
+.header-admin{
+    background-color: var(--admin-green);
+}
+
+header nav {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav img{
+    margin-top: 8px;
+}
+
+.logo-img-header{
+    margin: 0.5rem 10px 0.5rem 0;
+    height: 3em;
+    width: auto;
+}
+
+#profile-anchor{
+
+}
+
+#profile-anchor img{
+    margin: 0;
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #FFFFFF;
+}
+
+#profile-anchor-link{
+    display: none;
+}
+
+.show-only-mobile{
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: small;
+}
+
+.dropdown-content a:hover {
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    header{
+        box-shadow: 0 0 5px 3px #ccc;
+    }
+
+    header nav{
+        padding: 16px;
+    }
+
+    header nav a{
+        font-family: Roboto, sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    header nav button{
+        display: none;
+    }
+
+    .logo-img-header{
+        display: none;
+    }
+
+    #profile-anchor-link{
+        display: block;
+    }
+
+    .show-only-mobile{
+        display: block;
+    }
+
+    .dropdown-content {
+        position:absolute; left:-120px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+
+    header nav a:first-of-type{
+        margin-left: 0;
+    }
+
+    header nav a .button-green-ease{
+        margin: 0;
+    }
+
+    .logo-img-header{
+        margin: 0.5rem 0 0.5rem 0;
+    }
+}

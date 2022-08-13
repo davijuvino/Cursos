@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edição de usuário - Compartilhamento de experiências</title>
+    <div th:replace="fragments/head :: header"></div>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/userEdit.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+
+</head>
+<body>
+<header th:replace="fragments/header.html :: header"></header>
+<div th:if="${user == null}">
+    <h1>Usuário não encontrado</h1>
+</div>
+
+<div class="container">
+    <div th:insert="fragments/userFragment.html :: user" class="user"></div>
+    <div class="line"></div>
+    <div class="question-card-divider"></div>
+
+    <!--    <div class="container-forms">-->
+    <form role="form" th:action="@{/user/edit}" th:method="post" th:object="${user}" enctype="multipart/form-data"
+          class="profile-edit">
+        <input type="hidden" name="id" th:value="${user.getId()}"/>
+        <div class="newpicture">
+            <p class="title pic-title">Editar Perfil</p>
+            <div class="avatar img-container link">
+                <div onclick="document.querySelector('#fileinput').click()">
+                    <img th:if="!${user.getImage()}"
+                         src="/img/newpicture.png"
+                         class="avatar newpic"
+                         alt="Adicionar nova foto">
+                    <img class="avatar newpic" th:if="${user.getImage()}" th:src="${user.getImage()}"
+                         alt="Adicionar nova foto">
+                </div>
+                <input id="fileinput" name="fileimage" onchange="showImg()" accept="image/*" type="file"
+                       style="display: none">
+            </div>
+        </div>
+
+        <div class="forms">
+            <div class="form">
+                <p class="title edit-title">Editar Perfil</p>
+
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" th:value="${user.getName()}"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="name">Empresa</label>
+                        <input type="text" name="company" th:value="${user.getCompany()}"/>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="name">Site</label>
+                        <input type="text" name="website" id="website" th:value="${user.getWebsite()}"/>
+                        <label id="example" for="website">Ex.: https://www.seusite.com </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-control">
+                        <label for="name">Bio</label>
+                        <textarea type="text" name="bio" id="bio" th:text="${user.getBio()}"></textarea>
+                    </div>
+                </div>
+                <div class="row white-background">
+                    <button type="submit">Atualizar</button>
+                </div>
+            </div>
+            <br>
+            <div class="form senha">
+                <p class="title">Editar Credenciais</p>
+
+                <div class="form-group">
+
+                    <div class="form-control">
+                        <label for="password">Senha Atual</label>
+                        <input type="password" name="password" id="password"/>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="newPassword">Nova Senha</label>
+                        <input type="password" name="newPassword" id="newPassword"/>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="confirmNewPassword">Confirmar Senha</label>
+                        <input type="password" name="confirmNewPassword" id="confirmNewPassword"/>
+                    </div>
+                </div>
+
+                <div class="row white-background">
+                    <button type="submit">Atualizar Senha</button>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+    <!--        <form th:action="@{/user/editPassword}" th:method="post" th:object="${user}">-->
+    <!--            <div class="form">-->
+    <!--                <p class="title edit-title">Editar Credenciais</p>-->
+
+    <!--                <div class="form-group">-->
+    <!--                    <div class="form-control">-->
+    <!--                        <label for="newPassword">Senha</label>-->
+    <!--                        <input type="password" name="newPassword" id="newPassword" />-->
+    <!--                    </div>-->
+
+    <!--                    <div class="form-control">-->
+    <!--                        <label for="confirmNewPassword">Nova Senha</label>-->
+    <!--                        <input type="password" name="confirmNewPassword" id="confirmNewPassword" />-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="row white-background">-->
+    <!--                    <button type="submit">Atualizar Senha</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </form>-->
+    <!--    </div>-->
+
+    <!--</div>-->
+</div>
+    <div th:replace="fragments/toast.html :: toasts">
+    </div>
+</body>
+<script>
+    function showImg() {
+        file = document.getElementById('fileinput').files[0]
+
+        const reader = new FileReader()
+        reader.readAsArrayBuffer(file)
+        reader.onload = () => {
+            const result = reader.result;
+            const base = new Uint8Array(result).reduce(
+                (data, byte) => data + String.fromCharCode(byte),
+                ""
+            )
+
+            const url = `data:image/jpg;charset=utf-8;base64, ${btoa(base)}`
+            Array.from(document.querySelectorAll('.newpic')).forEach(e => e.setAttribute('src', url))
+        }
+    }
+</script>
+</html>
