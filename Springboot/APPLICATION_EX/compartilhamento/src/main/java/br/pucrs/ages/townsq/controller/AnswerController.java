@@ -49,8 +49,8 @@ public class AnswerController {
         try {
             Answer createdAnswer = answerService.saveAnswer(answer, user, question);
             emailService.createEmail(createdAnswer);
-
             redirectAttributes.addFlashAttribute("success", "Resposta criada com sucesso!");
+            redirectAttributes.addFlashAttribute("reputation", "Você ganhou 10 pontos!");
             return "redirect:/question/" + question.getId() + "/" + Slugify.toSlug(question.getTitle());
         } catch (IllegalArgumentException ie) {
             redirectAttributes.addFlashAttribute("error", "Resposta não pode ser vazia");
@@ -133,8 +133,6 @@ public class AnswerController {
             } catch (SecurityException | NotFoundException | IllegalArgumentException  e ) {
                 redirectAttributes.addFlashAttribute("error", e.getMessage());
             }
-
-
             return "redirect:/question/" + questionFrom.getId() + "/" + Slugify.toSlug(questionFrom.getTitle());
         }
         return "";

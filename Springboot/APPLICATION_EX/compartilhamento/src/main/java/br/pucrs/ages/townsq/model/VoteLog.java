@@ -1,6 +1,6 @@
 package br.pucrs.ages.townsq.model;
 
-import br.pucrs.ages.townsq.listeners.ReputationLogListener;
+import br.pucrs.ages.townsq.listeners.VoteLogListener;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -9,15 +9,14 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@EntityListeners(ReputationLogListener.class)
-@Table(name = "reputation_logs")
+@EntityListeners(VoteLogListener.class)
+@Table(name = "vote_logs")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class ReputationLog {
-
+public class VoteLog {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,9 +27,9 @@ public class ReputationLog {
     @NotNull(message = "Tipo do evento não pode ser nulo.")
     private String eventType;
 
-    @Column(name = "points")
+    @Column(name = "score")
     @NotNull(message = "Pontuação não pode ser nula.")
-    private Integer points;
+    private Integer score;
 
     @CreationTimestamp
     @Column(name = "createdAt")
@@ -49,11 +48,7 @@ public class ReputationLog {
     private Answer answer;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "toUserId", nullable = false)
-    private User toUser;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fromUserId", nullable = false)
-    private User fromUser;
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;
 
 }

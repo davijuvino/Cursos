@@ -100,4 +100,42 @@ public class ReputationLogService {
         reputationRepository.save(toPersist);
     }
 
+    public void createdAnswerLog(Answer answer){
+        ReputationLog toPersist = ReputationLog.builder()
+                .eventType(ReputationEventType.CREATED_ANSWER.getValue())
+                .points(ReputationPoints.CREATED_ANSWER.getValue())
+                .isActive(1)
+                .question(answer.getQuestion())
+                .toUser(answer.getUser())
+                .fromUser(answer.getUser())
+                .build();
+        reputationRepository.save(toPersist);
+    }
+
+    public void deleteAnswerLog(Answer answer){
+        ReputationLog toPersist = ReputationLog.builder()
+                .eventType(ReputationEventType.CREATED_ANSWER.getValue())
+                .points(ReputationPoints.DELETED_ANSWER.getValue())
+                .isActive(1)
+                .question(answer.getQuestion())
+                .toUser(answer.getUser())
+                .fromUser(answer.getUser())
+                .build();
+        reputationRepository.save(toPersist);
+    }
+
+    public void voteLog(VoteLog vote, int points, User toUser){
+        ReputationLog toPersist = ReputationLog.builder()
+                .eventType(vote.getEventType())
+                .points(points)
+                .isActive(1)
+                .question(vote.getQuestion())
+                .answer(vote.getAnswer())
+                .toUser(toUser)
+                .fromUser(vote.getUser())
+                .build();
+        reputationRepository.save(toPersist);
+    }
+
+
 }

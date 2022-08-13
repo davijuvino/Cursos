@@ -19,11 +19,13 @@ public class AnswerService {
     private final AnswerRepository answerRepository;
     private final ReputationLogService reputationService;
     private final QuestionService questionService;
+    private final EmailService emailService;
 
-    public AnswerService(AnswerRepository answerRepository, ReputationLogService reputationService, QuestionService questionService) {
+    public AnswerService(AnswerRepository answerRepository, ReputationLogService reputationService, QuestionService questionService, EmailService emailService) {
         this.answerRepository = answerRepository;
         this.reputationService = reputationService;
         this.questionService = questionService;
+        this.emailService = emailService;
     }
 
     /**
@@ -65,7 +67,6 @@ public class AnswerService {
     public boolean delete(User user, long answerId) {
         Answer answer = answerRepository.findById(answerId).orElse(null);
         if(answer != null) {
-
             if(answer.getUser().getId().equals(user.getId())
                     && answer.getIsActive() == 1
                     && answer.getQuestion().getIsActive() == 1
@@ -77,6 +78,7 @@ public class AnswerService {
                     questionService.openQuestion(answer.getQuestion());
                 }
                 answerRepository.save(answer);
+                reputationService.deleteAnswerLog(answer);
                 return true;
             }
             return false;
@@ -96,7 +98,7 @@ public class AnswerService {
      * @return List of answers
      */
     public List<Answer> getQuestionAnswers(Question question) {
-        return answerRepository.findByIsActiveAndQuestionEqualsOrderByCreatedAtDesc(1, question)
+        return answerRepository.findByIsActiveAndQuestionEqualsOrderByScoreDescCreatedAtDesc(1, question)
                 .stream()
                 .sorted(Comparator.comparing(Answer::getIsBest).reversed())
                 .collect(Collectors.toList());
@@ -126,6 +128,12 @@ public class AnswerService {
         databaseAnswer.setIsBest(1);
         reputationService.favoriteBestAnswer(databaseAnswer);
         questionService.closeQuestion(questionFrom);
-        answerRepository.save(databaseAnswer);
+        databaseAnswer = answerRepository.save(databaseAnswer);
+        emailService.createEmail(databaseAnswer);
+    }
+
+    public void updateAnswerScore(Answer answer, int score){
+        answer.setScore(answer.getScore() + score);
+        answerRepository.save(answer);
     }
 }
